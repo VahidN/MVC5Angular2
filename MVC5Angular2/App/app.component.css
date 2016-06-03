@@ -1,0 +1,11 @@
+li {
+    font-size: large;
+}
+
+div.panel-heading {
+   font-size: x-large;
+}
+
+.ng-touched.ng-invalid{
+    border: 1px solid red;
+}

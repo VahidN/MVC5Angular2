@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="~/wwwroot/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/wwwroot/app.component.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/wwwroot/js/shims.js"></script>
+</head>
+
+<body>
+    <div>
+        @RenderBody()
+        <pm-app>Loading App...</pm-app>
+    </div>
+
+    <script src="~/wwwroot/js/jquery/dist/jquery.min.js"></script>
+    <script src="~/wwwroot/js/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/wwwroot/js/bundle.js?v=1.0"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<form [ngFormModel]="form" (ngSubmit)="onSubmit()">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Add User
+            </h3>
+        </div>
+        <div class="panel-body form-horizontal">
+            <div class="form-group">
+                <label form="name" class="col col-md-2 control-label">Username</label>
+                <div class="controls col col-md-10">
+                    <input id="name" type="text" class="form-control"
+                           ngControl="name"
+                           #name="ngForm" />
+                    <div *ngIf="name.control.pending">
+                        Checking server, Please wait ...
+                    </div>
+                    <div *ngIf="name.touched && name.errors">
+                        <label class="text-danger" *ngIf="name.errors.required">
+                            Username is required.
+                        </label>
+                        <label class="text-danger" *ngIf="name.errors.cannotContainSpace">
+                            Username can't contain space.
+                        </label>
+                        <label class="text-danger" *ngIf="name.errors.nameShouldBeUnique">
+                            This username is already taken.
+                        </label>
+                        <label class="text-danger" *ngIf="name.errors.invalidData">
+                            Check the inputs....
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label form="email" class="col col-md-2 control-label">Email</label>
+                <div class="controls col col-md-10">
+                    <input id="email" type="text" class="form-control"
+                           ngControl="email" #email="ngForm" />
+                    <div *ngIf="email.touched && email.errors">
+                        <label class="text-danger" *ngIf="email.errors.required">
+                            Email is required.
+                        </label>
+                        <label class="text-danger" *ngIf="email.errors.email">
+                            Please type a valid email.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label form="password" class="col col-md-2 control-label">Password</label>
+                <div class="controls col col-md-10">
+                    <input id="password" type="password" class="form-control"
+                           ngControl="password" #password="ngForm" />
+                    <label class="text-danger" *ngIf="password.touched && !password.valid">
+                        Password is required.
+                    </label>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <button [disabled]="!form.valid"
+                    type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </footer>
+    </div>
+</form>
