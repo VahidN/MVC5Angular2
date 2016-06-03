@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.zip
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -190,6 +191,8 @@ ClientBin/
 *.publishsettings
 node_modules/
 orleans.codegen.cs
+wwwroot/
+dist/
 
 # RIA/Silverlight projects
 Generated_Code/
