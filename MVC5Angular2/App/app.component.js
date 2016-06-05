@@ -21,6 +21,7 @@ var product_form_component_1 = require('./products/product-form.component');
 var signup_form_component_1 = require('./users/signup-form.component');
 var typed_sha_component_1 = require('./using-third-party-libraries/typed-sha.component');
 var untyped_sha_component_1 = require('./using-third-party-libraries/untyped-sha.component');
+var using_jquery_addons_component_1 = require('./using-jquery-addons/using-jquery-addons.component');
 //for webpack
 //import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 var AppComponent = (function () {
@@ -46,7 +47,8 @@ var AppComponent = (function () {
             { path: '/addproduct', name: 'AddProduct', component: product_form_component_1.ProductFormComponent },
             { path: '/adduser', name: 'AddUser', component: signup_form_component_1.SignupFormComponent },
             { path: '/typedsha', name: 'TypedSha', component: typed_sha_component_1.TypedShaComponent },
-            { path: '/untypedsha', name: 'UnTypedSha', component: untyped_sha_component_1.UnTypedShaComponent }
+            { path: '/untypedsha', name: 'UnTypedSha', component: untyped_sha_component_1.UnTypedShaComponent },
+            { path: '/usingjquery', name: 'UsingJQuery', component: using_jquery_addons_component_1.UsingJQueryAddonsComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

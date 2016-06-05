@@ -12,6 +12,7 @@
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
         'rxjs': 'node_modules/rxjs',
         'jssha': 'node_modules/jssha/src'
+        //'chosen': 'bower_components/chosen'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -20,6 +21,7 @@
         'rxjs': { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
         'jssha': { main: 'sha512.js', defaultExtension: 'js' }
+        //'chosen': { main: 'chosen.jquery.min.js', defaultExtension: 'js' },
     };
 
     var ngPackageNames = [

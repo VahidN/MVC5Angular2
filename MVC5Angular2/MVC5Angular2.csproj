@@ -109,6 +109,7 @@
     <Content Include="App\products\product-list.component.css" />
     <Content Include="App\products\product-list.component.html" />
     <Content Include="App\users\signup-form.component.html" />
+    <Content Include="App\using-jquery-addons\using-jquery-addons.component.html" />
     <Content Include="App\using-third-party-libraries\typed-sha.component.html" />
     <Content Include="App\using-third-party-libraries\untyped-sha.component.html" />
     <Content Include="config\helpers.js" />
@@ -184,6 +185,7 @@
     <TypeScriptCompile Include="App\users\user.service.ts" />
     <TypeScriptCompile Include="App\users\user.ts" />
     <TypeScriptCompile Include="App\users\usernameValidators.ts" />
+    <TypeScriptCompile Include="App\using-jquery-addons\using-jquery-addons.component.ts" />
     <TypeScriptCompile Include="App\using-third-party-libraries\typed-sha.component.ts" />
     <TypeScriptCompile Include="App\using-third-party-libraries\untyped-sha.component.ts" />
     <TypeScriptCompile Include="App\vendor.ts" />
@@ -193,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_LayoutGulp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

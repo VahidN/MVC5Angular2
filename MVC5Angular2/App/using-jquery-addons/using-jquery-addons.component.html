@@ -1,0 +1,9 @@
+﻿<select>
+    <option *ngFor="let item of dropDownItems"
+            [value]="item"
+            [selected]="item == selectedValue">
+        {{item}} option
+    </option>
+</select>
+
+<h4> {{selectedValue}}</h4>

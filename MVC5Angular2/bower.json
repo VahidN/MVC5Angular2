@@ -1,0 +1,17 @@
+{
+    "name": "asp-net-mvc5x-angular2x",
+    "version": "1.0.0",
+    "authors": [
+        "DNT"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "chosen": "1.4.2"
+    },
+    "devDependencies": {
+    }
+}

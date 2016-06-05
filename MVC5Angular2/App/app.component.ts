@@ -13,6 +13,7 @@ import { ProductFormComponent }  from './products/product-form.component';
 import { SignupFormComponent } from './users/signup-form.component';
 import { TypedShaComponent } from './using-third-party-libraries/typed-sha.component';
 import { UnTypedShaComponent } from './using-third-party-libraries/untyped-sha.component';
+import { UsingJQueryAddonsComponent } from './using-jquery-addons/using-jquery-addons.component';
 
 
 //for webpack
@@ -37,7 +38,8 @@ import { UnTypedShaComponent } from './using-third-party-libraries/untyped-sha.c
     { path: '/addproduct', name: 'AddProduct', component: ProductFormComponent },
     { path: '/adduser', name: 'AddUser', component: SignupFormComponent },
     { path: '/typedsha', name: 'TypedSha', component: TypedShaComponent },
-    { path: '/untypedsha', name: 'UnTypedSha', component: UnTypedShaComponent }
+    { path: '/untypedsha', name: 'UnTypedSha', component: UnTypedShaComponent },
+    { path: '/usingjquery', name: 'UsingJQuery', component: UsingJQueryAddonsComponent }
 ])
 export class AppComponent {
     pageTitle: string = "DNT AngularJS 2.0 APP";
