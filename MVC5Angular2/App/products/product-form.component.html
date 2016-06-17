@@ -14,7 +14,8 @@
                            (change)="log(productName)"
                            minlength="3"
                            type="text" class="form-control"
-                           [(ngModel)]="productModel.productName"/>
+                           [(ngModel)]="productModel.productName"
+                           name="productName"/>
                     <div *ngIf="productName.touched && productName.errors">
                         <label class="text-danger" *ngIf="productName.errors.required">
                             Name is required.
@@ -31,7 +32,8 @@
                     <input ngControl="productCode" id="productCode" required
                            #productCode="ngForm"
                            type="text" class="form-control"
-                           [(ngModel)]="productModel.productCode"/>
+                           [(ngModel)]="productModel.productCode"
+                           name="productCode"/>
                     <label class="text-danger" *ngIf="productCode.touched && !productCode.valid">
                         Code is required.
                     </label>
@@ -43,7 +45,8 @@
                     <input ngControl="releaseDate" id="releaseDate" required
                            #releaseDate="ngForm"
                            type="text" class="form-control"
-                           [(ngModel)]="productModel.releaseDate"/>
+                           [(ngModel)]="productModel.releaseDate"
+                           name="releaseDate"/>
                     <label class="text-danger" *ngIf="releaseDate.touched && !releaseDate.valid">
                         Release Date is required.
                     </label>
@@ -55,7 +58,8 @@
                     <input ngControl="price" id="price" required
                            #price="ngForm"
                            type="text" class="form-control"
-                           [(ngModel)]="productModel.price"/>
+                           [(ngModel)]="productModel.price"
+                           name="price"/>
                     <label class="text-danger" *ngIf="price.touched && !price.valid">
                         Price is required.
                     </label>
@@ -67,7 +71,8 @@
                     <textarea ngControl="description" id="description" required
                               #description="ngForm"
                               rows="10" type="text" class="form-control"
-                              [(ngModel)]="productModel.description"></textarea>
+                              [(ngModel)]="productModel.description"
+                              name="description"></textarea>
                     <label class="text-danger" *ngIf="description.touched && !description.valid">
                         Description is required.
                     </label>
@@ -79,7 +84,8 @@
                     <input ngControl="imageUrl" id="imageUrl" required
                            #imageUrl="ngForm"
                            type="text" class="form-control"
-                           [(ngModel)]="productModel.imageUrl"/>
+                           [(ngModel)]="productModel.imageUrl"
+                           name="imageUrl"/>
                     <label class="text-danger" *ngIf="imageUrl.touched && !imageUrl.valid">
                         Image is required.
                     </label>

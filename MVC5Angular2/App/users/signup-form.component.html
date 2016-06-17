@@ -1,4 +1,4 @@
-﻿<form [ngFormModel]="form" (ngSubmit)="onSubmit()">
+﻿<form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -9,23 +9,22 @@
             <div class="form-group">
                 <label form="name" class="col col-md-2 control-label">Username</label>
                 <div class="controls col col-md-10">
-                    <input id="name" type="text" class="form-control"
-                           ngControl="name"
-                           #name="ngForm" />
-                    <div *ngIf="name.control.pending">
+                    <input id="name" name="name" type="text" class="form-control"
+                           formControlName="name" />
+                    <div *ngIf="nameCtrl.pending">
                         Checking server, Please wait ...
                     </div>
-                    <div *ngIf="name.touched && name.errors">
-                        <label class="text-danger" *ngIf="name.errors.required">
+                    <div *ngIf="nameCtrl.touched && nameCtrl.errors">
+                        <label class="text-danger" *ngIf="nameCtrl.errors.required">
                             Username is required.
                         </label>
-                        <label class="text-danger" *ngIf="name.errors.cannotContainSpace">
+                        <label class="text-danger" *ngIf="nameCtrl.errors.cannotContainSpace">
                             Username can't contain space.
                         </label>
-                        <label class="text-danger" *ngIf="name.errors.nameShouldBeUnique">
+                        <label class="text-danger" *ngIf="nameCtrl.errors.nameShouldBeUnique">
                             This username is already taken.
                         </label>
-                        <label class="text-danger" *ngIf="name.errors.invalidData">
+                        <label class="text-danger" *ngIf="nameCtrl.errors.invalidData">
                             Check the inputs....
                         </label>
                     </div>
@@ -34,13 +33,13 @@
             <div class="form-group">
                 <label form="email" class="col col-md-2 control-label">Email</label>
                 <div class="controls col col-md-10">
-                    <input id="email" type="text" class="form-control"
-                           ngControl="email" #email="ngForm" />
-                    <div *ngIf="email.touched && email.errors">
-                        <label class="text-danger" *ngIf="email.errors.required">
+                    <input id="email" name="email" type="text" class="form-control"
+                           formControlName="email" />
+                    <div *ngIf="emailCtrl.touched && emailCtrl.errors">
+                        <label class="text-danger" *ngIf="emailCtrl.errors.required">
                             Email is required.
                         </label>
-                        <label class="text-danger" *ngIf="email.errors.email">
+                        <label class="text-danger" *ngIf="emailCtrl.errors.email">
                             Please type a valid email.
                         </label>
                     </div>
@@ -49,9 +48,9 @@
             <div class="form-group">
                 <label form="password" class="col col-md-2 control-label">Password</label>
                 <div class="controls col col-md-10">
-                    <input id="password" type="password" class="form-control"
-                           ngControl="password" #password="ngForm" />
-                    <label class="text-danger" *ngIf="password.touched && !password.valid">
+                    <input id="password" name="password" type="password" class="form-control"
+                           formControlName="password" />
+                    <label class="text-danger" *ngIf="passwordCtrl.touched && !passwordCtrl.valid">
                         Password is required.
                     </label>
                 </div>

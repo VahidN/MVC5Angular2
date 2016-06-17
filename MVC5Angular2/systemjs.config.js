@@ -33,7 +33,8 @@
       'platform-browser-dynamic',
       'router',
       'router-deprecated',
-      'upgrade'
+      'upgrade',
+      'forms'
     ];
 
     // Individual files (~300 requests):
@@ -43,7 +44,7 @@
 
     // Bundled (~40 requests):
     function packUmd(pkgName) {
-        packages['@angular/' + pkgName] = { main: pkgName + '.umd.js', defaultExtension: 'js' };
+        packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
     };
 
     var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;

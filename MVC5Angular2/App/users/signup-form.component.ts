@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
-import { Control, ControlGroup, Validators, FormBuilder } from '@angular/common';
+import { Validators, REACTIVE_FORM_DIRECTIVES, FormControl, FormGroup } from '@angular/forms';
+
 import { UsernameValidators } from './usernameValidators';
 import { EmailValidators } from './emailValidators';
 import { UserService } from './user.service';
@@ -11,34 +12,27 @@ import {Observable} from 'rxjs/Rx';
     selector: 'signup-form',
     templateUrl: 'app/users/signup-form.component.html',
     //template: require('./signup-form.component.html'),//for webpack
-    providers: [UserService]
+    providers: [UserService],
+    directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class SignupFormComponent {
-    //form = new ControlGroup({
-    //    name: new Control('', Validators.required),
-    //    email: new Control('', Validators.required),
-    //    password: new Control('', Validators.required)
-    //});
 
-    form: ControlGroup;
+    form: FormGroup;
+    nameCtrl = new FormControl('', [Validators.required, UsernameValidators.cannotContainSpace],
+                                   [(control: FormControl) => this.nameShouldBeUnique(control)]);
+    emailCtrl = new FormControl('', [Validators.required, EmailValidators.email]);
+    passwordCtrl = new FormControl('', [Validators.required]);
 
-    constructor(private _formBuilder: FormBuilder, private _userService: UserService) {
-        this.form = _formBuilder.group({
-            name: ['', Validators.compose([
-                Validators.required,
-                UsernameValidators.cannotContainSpace
-            ]),
-                (control: Control) => this.nameShouldBeUnique(control)], // Validators.composeAsync
-            email: ['', Validators.compose([
-                Validators.required,
-                EmailValidators.email]
-            )],
-            password: ['', Validators.required]
+    constructor(private _userService: UserService) {
+        this.form = new FormGroup({
+            name: this.nameCtrl,
+            email: this.emailCtrl,
+            password: this.passwordCtrl
         });
     }
 
-
     onSubmit(): void {
+        console.log(this.form);
         console.log(this.form.value);
 
         /*this.form.find('name').setErrors({
@@ -51,7 +45,7 @@ export class SignupFormComponent {
             });
     }
 
-    nameShouldBeUnique(control: Control) {
+    nameShouldBeUnique(control: FormControl) {
         return new Observable((obs: any) => {
             control
                 .valueChanges
@@ -75,7 +69,7 @@ export class SignupFormComponent {
         });
     }
 
-    nameShouldBeUniqueNormal(control: Control) {
+    nameShouldBeUniqueNormal(control: FormControl) {
         let name: string = control.value;
         return new Promise((resolve) => {
             this._userService.isUserNameUnique(<IUser>{ "name": name }).subscribe(

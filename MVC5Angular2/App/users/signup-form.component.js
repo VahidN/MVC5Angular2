@@ -9,29 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var usernameValidators_1 = require('./usernameValidators');
 var emailValidators_1 = require('./emailValidators');
 var user_service_1 = require('./user.service');
 var Rx_1 = require('rxjs/Rx');
 var SignupFormComponent = (function () {
-    function SignupFormComponent(_formBuilder, _userService) {
+    function SignupFormComponent(_userService) {
         var _this = this;
-        this._formBuilder = _formBuilder;
         this._userService = _userService;
-        this.form = _formBuilder.group({
-            name: ['', common_1.Validators.compose([
-                    common_1.Validators.required,
-                    usernameValidators_1.UsernameValidators.cannotContainSpace
-                ]),
-                function (control) { return _this.nameShouldBeUnique(control); }],
-            email: ['', common_1.Validators.compose([
-                    common_1.Validators.required,
-                    emailValidators_1.EmailValidators.email])],
-            password: ['', common_1.Validators.required]
+        this.nameCtrl = new forms_1.FormControl('', [forms_1.Validators.required, usernameValidators_1.UsernameValidators.cannotContainSpace], [function (control) { return _this.nameShouldBeUnique(control); }]);
+        this.emailCtrl = new forms_1.FormControl('', [forms_1.Validators.required, emailValidators_1.EmailValidators.email]);
+        this.passwordCtrl = new forms_1.FormControl('', [forms_1.Validators.required]);
+        this.form = new forms_1.FormGroup({
+            name: this.nameCtrl,
+            email: this.emailCtrl,
+            password: this.passwordCtrl
         });
     }
     SignupFormComponent.prototype.onSubmit = function () {
+        console.log(this.form);
         console.log(this.form.value);
         /*this.form.find('name').setErrors({
             invalidData : true
@@ -79,9 +76,10 @@ var SignupFormComponent = (function () {
             selector: 'signup-form',
             templateUrl: 'app/users/signup-form.component.html',
             //template: require('./signup-form.component.html'),//for webpack
-            providers: [user_service_1.UserService]
+            providers: [user_service_1.UserService],
+            directives: [forms_1.REACTIVE_FORM_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [common_1.FormBuilder, user_service_1.UserService])
+        __metadata('design:paramtypes', [user_service_1.UserService])
     ], SignupFormComponent);
     return SignupFormComponent;
 }());

@@ -5,6 +5,7 @@
 
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
 
 // Our main component
 import { AppComponent } from "./app.component";
@@ -13,4 +14,7 @@ import { AppComponent } from "./app.component";
 //    enableProdMode();
 //}
 
-bootstrap(AppComponent, []);
+bootstrap(AppComponent, [
+    disableDeprecatedForms(),
+    provideForms()
+]);
