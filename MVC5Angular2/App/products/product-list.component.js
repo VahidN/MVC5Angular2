@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var product_filter_pipe_1 = require('./product-filter.pipe');
 var star_component_1 = require('../shared/star.component');
 var product_service_1 = require('./product.service');
@@ -42,7 +42,7 @@ var ProductListComponent = (function () {
             styleUrls: ['app/products/product-list.component.css'],
             //styles: [require('./product-list.component.css')],//for webpack
             pipes: [product_filter_pipe_1.ProductFilterPipe],
-            directives: [star_component_1.StarComponent, router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [star_component_1.StarComponent, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService])
     ], ProductListComponent);

@@ -31,7 +31,7 @@
       'http',
       'platform-browser',
       'platform-browser-dynamic',
-      'router',
+      'router', // doesn't come with umd bundles ... for now
       'router-deprecated',
       'upgrade',
       'forms'
@@ -47,7 +47,7 @@
         packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
     };
 
-    var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+    var setPackageConfig = /*System.packageWithIndex ? packIndex : packUmd;*/packIndex;
 
     // Add package entries for angular packages
     ngPackageNames.forEach(setPackageConfig);

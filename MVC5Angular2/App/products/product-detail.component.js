@@ -9,23 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var ProductDetailComponent = (function () {
-    function ProductDetailComponent(_routeParams, _router) {
-        this._routeParams = _routeParams;
+    function ProductDetailComponent(_route, _router) {
+        this._route = _route;
         this._router = _router;
         this.pageTitle = 'Product Detail';
-        var id = +this._routeParams.get('id');
-        this.pageTitle += ": " + id;
     }
+    ProductDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this._route.params
+            .subscribe(function (params) {
+            var id = +params['id']; // (+) converts string 'id' to a number
+            _this.pageTitle += ": " + id;
+        });
+    };
+    ProductDetailComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe(); // we must unsubscribe before Angular destroys the component. Failure to do so could create a memory leak.
+    };
     ProductDetailComponent.prototype.onBack = function () {
-        this._router.navigate(['Products']);
+        this._router.navigate(['/products']);
     };
     ProductDetailComponent = __decorate([
         core_1.Component({
             templateUrl: 'app/products/product-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], ProductDetailComponent);
     return ProductDetailComponent;
 }());

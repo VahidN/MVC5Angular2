@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { Router } from '@angular/router';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 
@@ -25,7 +25,7 @@ export class ProductFormComponent {
         this._productService.addProduct(this.productModel)
             .subscribe((product: IProduct) => {
                 console.log(`ID: ${product.productId}`);
-                this._router.navigate(['Products']);
+                this._router.navigate(['/products']);
             });
     }
 }

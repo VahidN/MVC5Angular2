@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var product_service_1 = require('./product.service');
 var ProductFormComponent = (function () {
     function ProductFormComponent(_productService, _router) {
@@ -27,7 +27,7 @@ var ProductFormComponent = (function () {
         this._productService.addProduct(this.productModel)
             .subscribe(function (product) {
             console.log("ID: " + product.productId);
-            _this._router.navigate(['Products']);
+            _this._router.navigate(['/products']);
         });
     };
     ProductFormComponent = __decorate([
@@ -35,7 +35,7 @@ var ProductFormComponent = (function () {
             //selector: 'product-form',
             templateUrl: 'app/products/product-form.component.html'
         }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [product_service_1.ProductService, router_1.Router])
     ], ProductFormComponent);
     return ProductFormComponent;
 }());
