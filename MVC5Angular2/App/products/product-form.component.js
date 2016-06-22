@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var product_service_1 = require('./product.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var product_service_1 = require("./product.service");
 var ProductFormComponent = (function () {
     function ProductFormComponent(_productService, _router) {
         this._productService = _productService;
@@ -27,13 +27,13 @@ var ProductFormComponent = (function () {
         this._productService.addProduct(this.productModel)
             .subscribe(function (product) {
             console.log("ID: " + product.productId);
-            _this._router.navigate(['/products']);
+            _this._router.navigate(["/products"]);
         });
     };
     ProductFormComponent = __decorate([
         core_1.Component({
             //selector: 'product-form',
-            templateUrl: 'app/products/product-form.component.html'
+            templateUrl: "app/products/product-form.component.html"
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService, router_1.Router])
     ], ProductFormComponent);

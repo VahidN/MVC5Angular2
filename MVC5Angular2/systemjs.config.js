@@ -47,10 +47,15 @@
         packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
     };
 
-    var setPackageConfig = /*System.packageWithIndex ? packIndex : packUmd;*/packIndex;
+    // Most environments should use UMD; some (Karma) need the individual index files
+    var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
 
     // Add package entries for angular packages
     ngPackageNames.forEach(setPackageConfig);
+
+    // No umd for router yet
+    packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
+
 
     var config = {
         map: map,

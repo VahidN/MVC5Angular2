@@ -10,7 +10,7 @@
                 <label for="productName" class="col col-md-2 control-label">Name</label>
                 <div class="controls col col-md-10">
                     <input ngControl="productName" id="productName" required
-                           #productName="ngForm"
+                           #productName="ngModel"
                            (change)="log(productName)"
                            minlength="3"
                            type="text" class="form-control"
@@ -30,7 +30,7 @@
                 <label for="productCode" class="col col-md-2 control-label">Code</label>
                 <div class="controls col col-md-10">
                     <input ngControl="productCode" id="productCode" required
-                           #productCode="ngForm"
+                           #productCode="ngModel"
                            type="text" class="form-control"
                            [(ngModel)]="productModel.productCode"
                            name="productCode"/>
@@ -43,7 +43,7 @@
                 <label for="releaseDate" class="col col-md-2 control-label">Release Date</label>
                 <div class="controls col col-md-10">
                     <input ngControl="releaseDate" id="releaseDate" required
-                           #releaseDate="ngForm"
+                           #releaseDate="ngModel"
                            type="text" class="form-control"
                            [(ngModel)]="productModel.releaseDate"
                            name="releaseDate"/>
@@ -56,7 +56,7 @@
                 <label for="price" class="col col-md-2 control-label">Price</label>
                 <div class="controls col col-md-10">
                     <input ngControl="price" id="price" required
-                           #price="ngForm"
+                           #price="ngModel"
                            type="text" class="form-control"
                            [(ngModel)]="productModel.price"
                            name="price"/>
@@ -69,7 +69,7 @@
                 <label for="description" class="col col-md-2 control-label">Description</label>
                 <div class="controls col col-md-10">
                     <textarea ngControl="description" id="description" required
-                              #description="ngForm"
+                              #description="ngModel"
                               rows="10" type="text" class="form-control"
                               [(ngModel)]="productModel.description"
                               name="description"></textarea>
@@ -82,7 +82,7 @@
                 <label for="imageUrl" class="col col-md-2 control-label">Image</label>
                 <div class="controls col col-md-10">
                     <input ngControl="imageUrl" id="imageUrl" required
-                           #imageUrl="ngForm"
+                           #imageUrl="ngModel"
                            type="text" class="form-control"
                            [(ngModel)]="productModel.imageUrl"
                            name="imageUrl"/>
