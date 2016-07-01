@@ -8,7 +8,7 @@ var signup_form_component_1 = require("./users/signup-form.component");
 var typed_sha_component_1 = require("./using-third-party-libraries/typed-sha.component");
 var untyped_sha_component_1 = require("./using-third-party-libraries/untyped-sha.component");
 var using_jquery_addons_component_1 = require("./using-jquery-addons/using-jquery-addons.component");
-exports.routes = [
+exports.App_Routes = [
     { path: "", component: welcome_component_1.WelcomeComponent, terminal: true },
     { path: "welcome", component: welcome_component_1.WelcomeComponent },
     { path: "products", component: product_list_component_1.ProductListComponent },
@@ -20,6 +20,6 @@ exports.routes = [
     { path: "usingjquery", component: using_jquery_addons_component_1.UsingJQueryAddonsComponent }
 ];
 exports.APP_ROUTER_PROVIDERS = [
-    router_1.provideRouter(exports.routes)
+    router_1.provideRouter(exports.App_Routes)
 ];
 //# sourceMappingURL=app.routes.js.map

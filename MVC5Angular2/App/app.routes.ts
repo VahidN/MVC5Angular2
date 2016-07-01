@@ -9,7 +9,7 @@ import { TypedShaComponent } from "./using-third-party-libraries/typed-sha.compo
 import { UnTypedShaComponent } from "./using-third-party-libraries/untyped-sha.component";
 import { UsingJQueryAddonsComponent } from "./using-jquery-addons/using-jquery-addons.component";
 
-export const routes: RouterConfig = [
+export const App_Routes: RouterConfig = [
     { path: "", component: WelcomeComponent, terminal: true }, // default route
     { path: "welcome", component: WelcomeComponent },
     { path: "products", component: ProductListComponent },
@@ -22,5 +22,5 @@ export const routes: RouterConfig = [
 ];
 
 export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
+    provideRouter(App_Routes)
 ];
