@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/Rx'); // require('rxjs/Rx'); // Load all features
 //import 'jssha'; // require('jssha');
-var router_1 = require('@angular/router');
 var product_service_1 = require('./products/product.service');
 //for webpack
 //import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -25,7 +24,6 @@ var AppComponent = (function () {
             selector: 'pm-app',
             //template: require('./app.component.html'), //for webpack
             templateUrl: "/app/app.component.html",
-            directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
                 product_service_1.ProductService,
                 http_1.HTTP_PROVIDERS

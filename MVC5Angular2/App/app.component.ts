@@ -3,8 +3,6 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import 'rxjs/Rx'; // require('rxjs/Rx'); // Load all features
 //import 'jssha'; // require('jssha');
 
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
 import { ProductService } from './products/product.service';
 
 //for webpack
@@ -15,7 +13,6 @@ import { ProductService } from './products/product.service';
     selector: 'pm-app',
     //template: require('./app.component.html'), //for webpack
     templateUrl: "/app/app.component.html",
-    directives: [ROUTER_DIRECTIVES],
     providers: [
         ProductService,
         HTTP_PROVIDERS

@@ -3,21 +3,7 @@
 /// <reference path="../typings/browser/ambient/jssha/index.d.ts" />
 /// <reference path="../typings/browser/ambient/jquery/index.d.ts" />
 
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import {disableDeprecatedForms, provideForms} from '@angular/forms';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
 
-// Our main component
-import { AppComponent } from "./app.component";
-import { APP_ROUTER_PROVIDERS } from './app.routes';
-
-//if (process.env.ENV === "production") {
-//    enableProdMode();
-//}
-
-bootstrap(AppComponent, [
-    disableDeprecatedForms(),
-    provideForms(),
-    APP_ROUTER_PROVIDERS
-])
-.catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule);

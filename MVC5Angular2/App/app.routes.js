@@ -1,4 +1,6 @@
 "use strict";
+// - Routes instead of RouteConfig
+// - RouterModule instead of provideRoutes
 var router_1 = require('@angular/router');
 var product_list_component_1 = require("./products/product-list.component");
 var welcome_component_1 = require("./home/welcome.component");
@@ -8,7 +10,7 @@ var signup_form_component_1 = require("./users/signup-form.component");
 var typed_sha_component_1 = require("./using-third-party-libraries/typed-sha.component");
 var untyped_sha_component_1 = require("./using-third-party-libraries/untyped-sha.component");
 var using_jquery_addons_component_1 = require("./using-jquery-addons/using-jquery-addons.component");
-exports.App_Routes = [
+exports.routes = [
     { path: "", component: welcome_component_1.WelcomeComponent, terminal: true },
     { path: "welcome", component: welcome_component_1.WelcomeComponent },
     { path: "products", component: product_list_component_1.ProductListComponent },
@@ -19,7 +21,6 @@ exports.App_Routes = [
     { path: "untypedsha", component: untyped_sha_component_1.UnTypedShaComponent },
     { path: "usingjquery", component: using_jquery_addons_component_1.UsingJQueryAddonsComponent }
 ];
-exports.APP_ROUTER_PROVIDERS = [
-    router_1.provideRouter(exports.App_Routes)
-];
+// - Updated Export
+exports.routing = router_1.RouterModule.forRoot(exports.routes);
 //# sourceMappingURL=app.routes.js.map

@@ -1,5 +1,4 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { IProduct } from './product';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { StarComponent } from '../shared/star.component';
@@ -12,7 +11,7 @@ import { ProductService } from './product.service';
     styleUrls: ['app/products/product-list.component.css'],
     //styles: [require('./product-list.component.css')],//for webpack
     pipes: [ProductFilterPipe],
-    directives: [StarComponent, ROUTER_DIRECTIVES]
+    directives: [StarComponent]
 })
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';
