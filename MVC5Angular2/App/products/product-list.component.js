@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_filter_pipe_1 = require('./product-filter.pipe');
-var star_component_1 = require('../shared/star.component');
 var product_service_1 = require('./product.service');
 var ProductListComponent = (function () {
     function ProductListComponent(_productService) {
@@ -38,10 +36,7 @@ var ProductListComponent = (function () {
             selector: 'pm-products',
             templateUrl: 'app/products/product-list.component.html',
             //template: require('./product-list.component.html'),//for webpack
-            styleUrls: ['app/products/product-list.component.css'],
-            //styles: [require('./product-list.component.css')],//for webpack
-            pipes: [product_filter_pipe_1.ProductFilterPipe],
-            directives: [star_component_1.StarComponent]
+            styleUrls: ['app/products/product-list.component.css']
         }), 
         __metadata('design:paramtypes', [product_service_1.ProductService])
     ], ProductListComponent);

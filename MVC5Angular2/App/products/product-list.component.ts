@@ -1,17 +1,13 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
-import { ProductFilterPipe } from './product-filter.pipe';
-import { StarComponent } from '../shared/star.component';
 import { ProductService } from './product.service';
 
 @Component({
     selector: 'pm-products',
     templateUrl: 'app/products/product-list.component.html',
     //template: require('./product-list.component.html'),//for webpack
-    styleUrls: ['app/products/product-list.component.css'],
+    styleUrls: ['app/products/product-list.component.css']
     //styles: [require('./product-list.component.css')],//for webpack
-    pipes: [ProductFilterPipe],
-    directives: [StarComponent]
 })
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';

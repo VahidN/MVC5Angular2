@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { Validators, REACTIVE_FORM_DIRECTIVES, FormControl, FormGroup } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 
 import { UsernameValidators } from './usernameValidators';
 import { EmailValidators } from './emailValidators';
@@ -12,8 +12,7 @@ import {Observable} from 'rxjs/Rx';
     selector: 'signup-form',
     templateUrl: 'app/users/signup-form.component.html',
     //template: require('./signup-form.component.html'),//for webpack
-    providers: [UserService],
-    directives: [REACTIVE_FORM_DIRECTIVES]
+    providers: [UserService]
 })
 export class SignupFormComponent {
 

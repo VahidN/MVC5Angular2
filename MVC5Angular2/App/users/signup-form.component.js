@@ -76,8 +76,7 @@ var SignupFormComponent = (function () {
             selector: 'signup-form',
             templateUrl: 'app/users/signup-form.component.html',
             //template: require('./signup-form.component.html'),//for webpack
-            providers: [user_service_1.UserService],
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES]
+            providers: [user_service_1.UserService]
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService])
     ], SignupFormComponent);

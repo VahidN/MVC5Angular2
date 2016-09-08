@@ -22,6 +22,8 @@ var signup_form_component_1 = require("./users/signup-form.component");
 var typed_sha_component_1 = require("./using-third-party-libraries/typed-sha.component");
 var untyped_sha_component_1 = require("./using-third-party-libraries/untyped-sha.component");
 var using_jquery_addons_component_1 = require("./using-jquery-addons/using-jquery-addons.component");
+var product_filter_pipe_1 = require('./products/product-filter.pipe');
+var star_component_1 = require('./shared/star.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,12 +33,14 @@ var AppModule = (function () {
                 // module dependencies
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
                 http_1.HttpModule,
                 app_routes_1.routing
             ],
             declarations: [
                 // components and directives
                 app_component_1.AppComponent,
+                star_component_1.StarComponent,
                 //You have to declare the components used in the routes in the NgModule.
                 product_list_component_1.ProductListComponent,
                 welcome_component_1.WelcomeComponent,
@@ -45,7 +49,9 @@ var AppModule = (function () {
                 signup_form_component_1.SignupFormComponent,
                 typed_sha_component_1.TypedShaComponent,
                 untyped_sha_component_1.UnTypedShaComponent,
-                using_jquery_addons_component_1.UsingJQueryAddonsComponent
+                using_jquery_addons_component_1.UsingJQueryAddonsComponent,
+                //Pipes
+                product_filter_pipe_1.ProductFilterPipe
             ],
             bootstrap: [
                 // root component

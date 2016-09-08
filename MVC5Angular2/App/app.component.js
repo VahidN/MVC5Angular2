@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
 require('rxjs/Rx'); // require('rxjs/Rx'); // Load all features
 //import 'jssha'; // require('jssha');
 var product_service_1 = require('./products/product.service');
@@ -25,8 +24,7 @@ var AppComponent = (function () {
             //template: require('./app.component.html'), //for webpack
             templateUrl: "/app/app.component.html",
             providers: [
-                product_service_1.ProductService,
-                http_1.HTTP_PROVIDERS
+                product_service_1.ProductService
             ]
         }), 
         __metadata('design:paramtypes', [])

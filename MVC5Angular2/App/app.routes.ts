@@ -13,7 +13,7 @@ import { UnTypedShaComponent } from "./using-third-party-libraries/untyped-sha.c
 import { UsingJQueryAddonsComponent } from "./using-jquery-addons/using-jquery-addons.component";
 
 export const routes: Routes = [
-    { path: "", component: WelcomeComponent, terminal: true }, // default route
+    { path: "", component: WelcomeComponent }, // default route
     { path: "welcome", component: WelcomeComponent },
     { path: "products", component: ProductListComponent },
     { path: "product/:id", component: ProductDetailComponent },

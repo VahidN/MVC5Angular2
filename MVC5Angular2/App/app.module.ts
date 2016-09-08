@@ -1,6 +1,6 @@
 ﻿import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
 
 import { AppComponent }   from './app.component';
@@ -14,19 +14,22 @@ import { SignupFormComponent } from "./users/signup-form.component";
 import { TypedShaComponent } from "./using-third-party-libraries/typed-sha.component";
 import { UnTypedShaComponent } from "./using-third-party-libraries/untyped-sha.component";
 import { UsingJQueryAddonsComponent } from "./using-jquery-addons/using-jquery-addons.component";
-
+import { ProductFilterPipe } from './products/product-filter.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
     imports: [
         // module dependencies
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         routing
     ],
     declarations: [ // You can optionally move your directives declarations from @Component to @NgModule
         // components and directives
         AppComponent,
+        StarComponent,
 
         //You have to declare the components used in the routes in the NgModule.
         ProductListComponent,
@@ -36,7 +39,10 @@ import { UsingJQueryAddonsComponent } from "./using-jquery-addons/using-jquery-a
         SignupFormComponent,
         TypedShaComponent,
         UnTypedShaComponent,
-        UsingJQueryAddonsComponent
+        UsingJQueryAddonsComponent,
+
+        //Pipes
+        ProductFilterPipe
     ],
     bootstrap: [
         // root component

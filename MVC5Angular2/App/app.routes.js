@@ -11,7 +11,7 @@ var typed_sha_component_1 = require("./using-third-party-libraries/typed-sha.com
 var untyped_sha_component_1 = require("./using-third-party-libraries/untyped-sha.component");
 var using_jquery_addons_component_1 = require("./using-jquery-addons/using-jquery-addons.component");
 exports.routes = [
-    { path: "", component: welcome_component_1.WelcomeComponent, terminal: true },
+    { path: "", component: welcome_component_1.WelcomeComponent },
     { path: "welcome", component: welcome_component_1.WelcomeComponent },
     { path: "products", component: product_list_component_1.ProductListComponent },
     { path: "product/:id", component: product_detail_component_1.ProductDetailComponent },
