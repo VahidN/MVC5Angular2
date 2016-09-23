@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
 
 import { AppComponent }   from './app.component';
-import { routing }        from './app.routes';
+import { routing, appRoutingProviders }        from './app.routing';
 
 import { ProductListComponent } from "./products/product-list.component";
 import { WelcomeComponent } from "./home/welcome.component";
@@ -50,6 +50,7 @@ import { StarComponent } from './shared/star.component';
     ],
     providers: [ // You can optionally move your providers declarations from @Component to @NgModule
         // services
+        appRoutingProviders
     ]
 })
 

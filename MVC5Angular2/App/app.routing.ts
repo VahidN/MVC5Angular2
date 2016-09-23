@@ -2,7 +2,6 @@
 // - RouterModule instead of provideRoutes
 import { Routes, RouterModule } from '@angular/router';
 
-
 import { ProductListComponent } from "./products/product-list.component";
 import { WelcomeComponent } from "./home/welcome.component";
 import { ProductDetailComponent } from "./products/product-detail.component";
@@ -12,7 +11,7 @@ import { TypedShaComponent } from "./using-third-party-libraries/typed-sha.compo
 import { UnTypedShaComponent } from "./using-third-party-libraries/untyped-sha.component";
 import { UsingJQueryAddonsComponent } from "./using-jquery-addons/using-jquery-addons.component";
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
     { path: "", component: WelcomeComponent }, // default route
     { path: "welcome", component: WelcomeComponent },
     { path: "products", component: ProductListComponent },
@@ -24,5 +23,8 @@ export const routes: Routes = [
     { path: "usingjquery", component: UsingJQueryAddonsComponent }
 ];
 
+export const appRoutingProviders: any[] = [
+];
+
 // - Updated Export
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forRoot(appRoutes);

@@ -13,7 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var app_routes_1 = require('./app.routes');
+var app_routing_1 = require('./app.routing');
 var product_list_component_1 = require("./products/product-list.component");
 var welcome_component_1 = require("./home/welcome.component");
 var product_detail_component_1 = require("./products/product-detail.component");
@@ -35,7 +35,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule,
-                app_routes_1.routing
+                app_routing_1.routing
             ],
             declarations: [
                 // components and directives
@@ -57,7 +57,10 @@ var AppModule = (function () {
                 // root component
                 app_component_1.AppComponent
             ],
-            providers: []
+            providers: [
+                // services
+                app_routing_1.appRoutingProviders
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

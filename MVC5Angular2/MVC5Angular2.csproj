@@ -170,7 +170,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="App\app.component.ts" />
     <TypeScriptCompile Include="App\app.module.ts" />
-    <TypeScriptCompile Include="App\app.routes.ts" />
+    <TypeScriptCompile Include="App\app.routing.ts" />
     <TypeScriptCompile Include="App\home\welcome.component.ts" />
     <TypeScriptCompile Include="App\main.ts" />
     <TypeScriptCompile Include="App\polyfills.ts" />
