@@ -1,7 +1,17 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 // - Routes instead of RouteConfig
 // - RouterModule instead of provideRoutes
 var router_1 = require('@angular/router');
+var core_1 = require('@angular/core');
 var product_list_component_1 = require("./products/product-list.component");
 var welcome_component_1 = require("./home/welcome.component");
 var product_detail_component_1 = require("./products/product-detail.component");
@@ -10,7 +20,7 @@ var signup_form_component_1 = require("./users/signup-form.component");
 var typed_sha_component_1 = require("./using-third-party-libraries/typed-sha.component");
 var untyped_sha_component_1 = require("./using-third-party-libraries/untyped-sha.component");
 var using_jquery_addons_component_1 = require("./using-jquery-addons/using-jquery-addons.component");
-exports.appRoutes = [
+var appRoutes = [
     { path: "", component: welcome_component_1.WelcomeComponent },
     { path: "welcome", component: welcome_component_1.WelcomeComponent },
     { path: "products", component: product_list_component_1.ProductListComponent },
@@ -21,7 +31,27 @@ exports.appRoutes = [
     { path: "untypedsha", component: untyped_sha_component_1.UnTypedShaComponent },
     { path: "usingjquery", component: using_jquery_addons_component_1.UsingJQueryAddonsComponent }
 ];
-exports.appRoutingProviders = [];
-// - Updated Export
-exports.routing = router_1.RouterModule.forRoot(exports.appRoutes);
+exports.routingComponents = [
+    product_list_component_1.ProductListComponent,
+    welcome_component_1.WelcomeComponent,
+    product_detail_component_1.ProductDetailComponent,
+    product_form_component_1.ProductFormComponent,
+    signup_form_component_1.SignupFormComponent,
+    typed_sha_component_1.TypedShaComponent,
+    untyped_sha_component_1.UnTypedShaComponent,
+    using_jquery_addons_component_1.UsingJQueryAddonsComponent
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forRoot(appRoutes)],
+            exports: [router_1.RouterModule]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+exports.AppRoutingModule = AppRoutingModule;
 //# sourceMappingURL=app.routing.js.map
