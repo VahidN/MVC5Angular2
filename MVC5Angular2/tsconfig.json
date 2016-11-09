@@ -10,13 +10,18 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "noImplicitAny": false,
-        "suppressImplicitAnyIndexErrors": true
+        "suppressImplicitAnyIndexErrors": true,
+        "strictNullChecks": false,
+        "typeRoots": [
+            "./node_modules/@types/"
+        ]
     },
     "exclude": [
         "node_modules",
         "wwwroot",
         "typings/main",
         "typings/main.d.ts",
-        "bower_components"
+        "bower_components",
+        "**/*-aot.ts"
     ]
 }
