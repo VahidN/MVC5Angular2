@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var usernameValidators_1 = require('./usernameValidators');
-var emailValidators_1 = require('./emailValidators');
-var user_service_1 = require('./user.service');
-var Rx_1 = require('rxjs/Rx');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var usernameValidators_1 = require("./usernameValidators");
+var emailValidators_1 = require("./emailValidators");
+var user_service_1 = require("./user.service");
+var Rx_1 = require("rxjs/Rx");
 var SignupFormComponent = (function () {
     function SignupFormComponent(_userService) {
         var _this = this;
@@ -71,16 +72,16 @@ var SignupFormComponent = (function () {
             });
         });
     };
-    SignupFormComponent = __decorate([
-        core_1.Component({
-            selector: 'signup-form',
-            templateUrl: 'app/users/signup-form.component.html',
-            //template: require('./signup-form.component.html'),//for webpack
-            providers: [user_service_1.UserService]
-        }), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
-    ], SignupFormComponent);
     return SignupFormComponent;
 }());
+SignupFormComponent = __decorate([
+    core_1.Component({
+        selector: 'signup-form',
+        templateUrl: 'app/users/signup-form.component.html',
+        //template: require('./signup-form.component.html'),//for webpack
+        providers: [user_service_1.UserService]
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService])
+], SignupFormComponent);
 exports.SignupFormComponent = SignupFormComponent;
 //# sourceMappingURL=signup-form.component.js.map

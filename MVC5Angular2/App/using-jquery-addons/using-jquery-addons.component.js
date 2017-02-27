@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var UsingJQueryAddonsComponent = (function () {
     function UsingJQueryAddonsComponent(_el) {
@@ -24,14 +25,13 @@ var UsingJQueryAddonsComponent = (function () {
             _this.selectedValue = args.selected;
         });
     };
-    UsingJQueryAddonsComponent = __decorate([
-        // typed
-        core_1.Component({
-            templateUrl: "app/using-jquery-addons/using-jquery-addons.component.html"
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], UsingJQueryAddonsComponent);
     return UsingJQueryAddonsComponent;
 }());
+UsingJQueryAddonsComponent = __decorate([
+    core_1.Component({
+        templateUrl: "app/using-jquery-addons/using-jquery-addons.component.html"
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], UsingJQueryAddonsComponent);
 exports.UsingJQueryAddonsComponent = UsingJQueryAddonsComponent;
 //# sourceMappingURL=using-jquery-addons.component.js.map

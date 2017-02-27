@@ -248,3 +248,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/MVC5Angular2/App/*.js
+/MVC5Angular2/App/*.map
